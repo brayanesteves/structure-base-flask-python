@@ -1,0 +1,30 @@
+{% extends "personas/layout.html" %}
+{% block body %}
+
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="card card-body">
+        <form action="/update/{{persona.Rfrnc}}" method="POST">
+          <div class="form-group">
+            <input type="text" name="cedula" value="{{persona.cedula}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="nombres" value="{{persona.nombres}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="apellidos" value="{{persona.apellidos}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="date" class="form-control" value="{{persona.fechaDeNacimiento}}" name="fechaDeNacimiento">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">
+              Update
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
